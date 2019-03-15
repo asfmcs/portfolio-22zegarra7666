@@ -1,0 +1,37 @@
+body {
+  background-color:rgb(230, 250, 250)
+}
+h1 {
+      color: rgb(255, 255, 255);
+        background-color: rgb(47, 94, 187);
+    } 
+
+ h4 {
+       color: rgb(255, 255, 255);
+         background-color: rgb(58, 88, 128);
+
+    } 
+
+ h2 {
+       color: rgb(255, 255, 255);
+         background-color: rgb(58, 88, 128);
+    } 
+
+p {
+      color: rgb(163, 128, 95);
+         text-indent: 50px; 
+          text-align: justify;    
+}
+
+ul {
+  color: rgb(163, 128, 95);
+  }
+
+  ol {
+  color: rgb(163, 128, 95);
+  }
+
+.citations{
+  color: rgb(163, 128, 95); 
+  element.classList.add("mystyle"); 
+}

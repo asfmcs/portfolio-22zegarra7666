@@ -1,0 +1,66 @@
+body {
+  background-color:rgb(236, 230, 250)
+}
+h1 {
+      color: rgb(255, 255, 255);
+        background-color: rgb(131, 47, 187);
+        font-family: Courier New;
+    } 
+
+ h4 {
+       color: rgb(255, 255, 255);
+         background-color: rgb(114, 58, 128);
+                 font-family: Courier New
+
+    } 
+
+ h2 {
+       color: rgb(255, 255, 255);
+         background-color: rgb(116, 58, 128);
+                 font-family: Courier New
+    } 
+
+p {
+      color: rgb(163, 95, 160);
+         text-indent: 50px; 
+          text-align: justify;    
+}
+
+/*tables*/
+table, th, td {
+  border: 10px solid white;
+    border-collapse: collapse; /*'collapse' is what I had to look up on W3Schools*/
+}
+
+/*tables*/
+h, td {
+  padding: 1px;
+}
+
+/*tables*/
+th {
+  text-align: center;
+}
+
+/*tables*/
+table {
+  border-spacing: 5px;
+}
+
+/*table format*/
+table {
+  width: 150%; 
+  background-color: rgb(212, 188, 163);
+}
+
+/*table format*/
+table {
+  width: 50%; 
+  background-color: rgb(248, 246, 244);
+}
+
+.tables {
+  color: rgb(116, 58, 128);
+           text-indent: 50px; 
+          text-align: justify; 
+}
