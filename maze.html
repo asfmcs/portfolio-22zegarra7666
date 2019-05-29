@@ -1,0 +1,1222 @@
+
+<html>
+<head>
+<title>3. Maze</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://static.codehs.com/gulp/ec071a764d83f34910ba21fab0b0f0cc20293542/chs-js-lib/chs.js"></script>
+
+
+<style>
+canvas {
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+}
+
+pre {
+    border: 1px solid black;
+    display: inline-block;
+    width: 400px;
+    height: 500px;
+    background-color: #F5F5F5;
+}
+</style>
+
+</head>
+
+<body>
+<h1>3. Maze</h1>
+
+
+
+<canvas
+width="400"
+height="500"
+class="codehs-editor-canvas"></canvas>
+<pre id="console"></pre>
+
+<script>
+window.onload = function() {
+
+    function start(){
+  //background
+    var rect1 = new Rectangle (getWidth(),getHeight());
+    rect1.setColor (Color.black);
+	rect1.setPosition (0, 0);
+	add(rect1); 
+	
+	
+//center rectangles	
+	var rect1 = new Rectangle (110,70);
+    rect1.setColor (Color.blue);
+	rect1.setPosition (getWidth()/2 - 55,210);
+	add(rect1); 
+//center rectangles	
+	var rect1 = new Rectangle (105,65);
+    rect1.setColor (Color.black);
+	rect1.setPosition (getWidth()/2 - 52.5,212.5);
+	add(rect1); 
+//center rectangles	
+	var rect1 = new Rectangle (100,60);
+    rect1.setColor (Color.blue);
+	rect1.setPosition (getWidth()/2 - 50,215);
+	add(rect1); 
+//center rectangles	
+	var rect1 = new Rectangle (95,55);
+    rect1.setColor (Color.black);
+	rect1.setPosition (getWidth()/2 - 47.5,217.5);
+	add(rect1); 
+//center rectangles	
+	var rect1 = new Rectangle (40,7);
+    rect1.setColor (Color.white);
+	rect1.setPosition (getWidth()/2 - 20,210);
+	add(rect1); 
+	
+	
+//top-center rectangles	T 1
+    var rect1 = new Rectangle (115,65);
+    rect1.setColor (Color.blue);
+	rect1.setPosition (140,105);
+	add(rect1); 
+	
+	var rect1 = new Rectangle (110,20);
+    rect1.setColor (Color.black);
+	rect1.setPosition (142.5,107.5);
+	add(rect1); 
+	
+	var rect1 = new Rectangle (20,60);
+    rect1.setColor (Color.black);
+	rect1.setPosition (187.5,107);
+	add(rect1); 
+	
+	var rect1 = new Rectangle (45,40);
+    rect1.setColor (Color.black);
+	rect1.setPosition (210,130);
+	add(rect1); 
+	
+	var rect1 = new Rectangle (45,40);
+    rect1.setColor (Color.black);
+	rect1.setPosition (140,130);
+	add(rect1); 
+	
+	
+	//top-center rectangles	T 2
+    var rect1 = new Rectangle (115,65);
+    rect1.setColor (Color.blue);
+	rect1.setPosition (140,-8);
+	add(rect1); 
+	
+	var rect1 = new Rectangle (110,20);
+    rect1.setColor (Color.black);
+	rect1.setPosition (142.5,-5.5);
+	add(rect1); 
+	
+	var rect1 = new Rectangle (20,60);
+    rect1.setColor (Color.black);
+	rect1.setPosition (187.5, -5.7);
+	add(rect1); 
+	
+	var rect1 = new Rectangle (45,40);
+    rect1.setColor (Color.black);
+	rect1.setPosition (210,17);
+	add(rect1); 
+	
+	var rect1 = new Rectangle (45,40);
+    rect1.setColor (Color.black);
+	rect1.setPosition (140,17);
+	add(rect1); 
+	
+	//down-center rectantgle T 1
+    var rect1 = new Rectangle (115,65);
+    rect1.setColor (Color.blue);
+	rect1.setPosition (140,325);
+	add(rect1); 
+	
+	var rect1 = new Rectangle (110,20);
+    rect1.setColor (Color.black);
+	rect1.setPosition (142.5,327.5);
+	add(rect1); 
+	
+	var rect1 = new Rectangle (20,60);
+    rect1.setColor (Color.black);
+	rect1.setPosition (187.5,327);
+	add(rect1); 
+	
+	var rect1 = new Rectangle (45,40);
+    rect1.setColor (Color.black);
+	rect1.setPosition (210,350);
+	add(rect1); 
+	
+	var rect1 = new Rectangle (45,40);
+    rect1.setColor (Color.black);
+	rect1.setPosition (140,350);
+	add(rect1); 
+	
+	
+	//down-center rectantgle T 2
+    var rect1 = new Rectangle (115,65);
+    rect1.setColor (Color.blue);
+	rect1.setPosition (140,445);
+	add(rect1); 
+	
+	var rect1 = new Rectangle (110,20);
+    rect1.setColor (Color.black);
+	rect1.setPosition (142.5,447.5);
+	add(rect1); 
+	
+	var rect1 = new Rectangle (20,60);
+    rect1.setColor (Color.black);
+	rect1.setPosition (187.5,447);
+	add(rect1); 
+	
+	var rect1 = new Rectangle (45,40);
+    rect1.setColor (Color.black);
+	rect1.setPosition (210,470);
+	add(rect1); 
+	
+	var rect1 = new Rectangle (45,40);
+    rect1.setColor (Color.black);
+	rect1.setPosition (140,470);
+	add(rect1); 
+	
+	
+	//left rectantgle T 1
+    var rect1 = new Rectangle (65,115);
+    rect1.setColor (Color.blue);
+	rect1.setPosition (40,145);
+	add(rect1); 
+	
+	var rect1 = new Rectangle (20,110);
+    rect1.setColor (Color.black);
+	rect1.setPosition (42.5,147.5);
+	add(rect1); 
+	
+	var rect1 = new Rectangle (60,20);
+    rect1.setColor (Color.black);
+	rect1.setPosition (42.5,192.5);
+	add(rect1); 
+	
+	var rect1 = new Rectangle (40,45);
+    rect1.setColor (Color.black);
+	rect1.setPosition (65,145);
+	add(rect1); 
+	
+	var rect1 = new Rectangle (40,45);
+    rect1.setColor (Color.black);
+	rect1.setPosition (65,215);
+	add(rect1); 
+	
+	
+	//right rectantgle T 1
+    var rect1 = new Rectangle (65,115);
+    rect1.setColor (Color.blue);
+	rect1.setPosition (300,145);
+	add(rect1); 
+	
+	var rect1 = new Rectangle (20,110);
+    rect1.setColor (Color.black);
+	rect1.setPosition (342.5,147.5);
+	add(rect1); 
+	
+	var rect1 = new Rectangle (60,20);
+    rect1.setColor (Color.black);
+	rect1.setPosition (302.5,192.5);
+	add(rect1); 
+	
+	var rect1 = new Rectangle (40,45);
+    rect1.setColor (Color.black);
+	rect1.setPosition (300,145);
+	add(rect1); 
+	
+	var rect1 = new Rectangle (40,45);
+    rect1.setColor (Color.black);
+	rect1.setPosition (300,215);
+	add(rect1); 
+	
+	//up-right rectantgle 
+    var rect1 = new Rectangle (25,115);
+    rect1.setColor (Color.blue);
+	rect1.setPosition (340,-15);
+	add(rect1); 
+	
+	var rect1 = new Rectangle (20,110);
+    rect1.setColor (Color.black);
+	rect1.setPosition (342.5,-12.5);
+	add(rect1); 
+	
+	//down-right rectantgle 
+    var rect1 = new Rectangle (25,115);
+    rect1.setColor (Color.blue);
+	rect1.setPosition (340,300);
+	add(rect1); 
+	
+	var rect1 = new Rectangle (20,110);
+    rect1.setColor (Color.black);
+	rect1.setPosition (342.5,302.5);
+	add(rect1); 
+
+    //down-left rectantgle 
+    var rect1 = new Rectangle (25,115);
+    rect1.setColor (Color.blue);
+	rect1.setPosition (40,300);
+	add(rect1); 
+	
+	var rect1 = new Rectangle (20,110);
+    rect1.setColor (Color.black);
+	rect1.setPosition (42.5,302.5);
+	add(rect1); 
+	
+	//up-left rectantgle 
+    var rect1 = new Rectangle (25,115);
+    rect1.setColor (Color.blue);
+	rect1.setPosition (40,-15);
+	add(rect1); 
+	
+	var rect1 = new Rectangle (20,110);
+    rect1.setColor (Color.black);
+	rect1.setPosition (42.5,-12.5);
+	add(rect1); 
+	
+	
+	//short-left rectangle
+	var rect1 = new Rectangle (52.5,27.5);
+    rect1.setColor (Color.blue);
+	rect1.setPosition (312.5,442.5);
+	add(rect1); 
+	
+	var rect1 = new Rectangle (47.5,22.5);
+    rect1.setColor (Color.black);
+	rect1.setPosition (315,445);
+	add(rect1); 
+
+
+//down short-left rectangle 
+	var rect1 = new Rectangle (27.5,27.5);
+    rect1.setColor (Color.blue);
+	rect1.setPosition (107.5,382.5);
+	add(rect1); 
+	
+	var rect1 = new Rectangle (22.5,22.5);
+    rect1.setColor (Color.black);
+	rect1.setPosition (110,385);
+	add(rect1); 
+	
+	//up short-left rectangle 
+	var rect1 = new Rectangle (27.5,27.5);
+    rect1.setColor (Color.blue);
+	rect1.setPosition (107.5,42.5);
+	add(rect1); 
+	
+	var rect1 = new Rectangle (22.5,22.5);
+    rect1.setColor (Color.black);
+	rect1.setPosition (110,45);
+	add(rect1); 
+
+
+    //up short-right rectangle 
+	var rect1 = new Rectangle (27.5,27.5);
+    rect1.setColor (Color.blue);
+	rect1.setPosition (262.5,42.5);
+	add(rect1); 
+	
+	var rect1 = new Rectangle (22.5,22.5);
+    rect1.setColor (Color.black);
+	rect1.setPosition (265,45);
+	add(rect1);
+
+
+	//down short-right rectangle 
+	var rect1 = new Rectangle (27.5,27.5);
+    rect1.setColor (Color.blue);
+	rect1.setPosition (262.5,382.5);
+	add(rect1); 
+	
+	var rect1 = new Rectangle (22.5,22.5);
+    rect1.setColor (Color.black);
+	rect1.setPosition (265,385);
+	add(rect1); 
+	
+	
+	//short-right rectangle
+	var rect1 = new Rectangle (52.5,27.5);
+    rect1.setColor (Color.blue);
+	rect1.setPosition (37.5,442.5);
+	add(rect1); 
+	
+	var rect1 = new Rectangle (47.5,22.5);
+    rect1.setColor (Color.black);
+	rect1.setPosition (40,445);
+	add(rect1); 
+	
+	
+	
+   //characters
+    var centerX = getWidth()/2;
+    var centerY = getHeight()/2;
+    drawGhost(centerX, centerY - 10, Color.red);
+    drawGhost(170,240, Color.cyan);
+    drawGhost(230,240, Color.green);
+    drawGhost(260,165, Color.orange);
+    
+    pacMan(30, 40, 330, 0);
+    eye(65,225, Color.black);
+    circles(110, 238, Color.yellow);
+
+}
+
+function drawGhost(centerX, centerY, color){
+    
+    var ghostSize = 20;
+    
+    var ghostHead = new Circle(ghostSize/2);
+	ghostHead.setColor(color);
+	ghostHead.setPosition(centerX, centerY);
+	add(ghostHead); 
+	
+	var ghostBody = new Rectangle (ghostSize, ghostSize);
+    ghostBody.setColor (color);
+	ghostBody.setPosition (centerX-ghostSize/2, centerY);
+	add(ghostBody); 
+	
+	var drawLegs =  new Circle (ghostSize/6);
+	drawLegs.setColor (color);
+	drawLegs.setPosition (centerX, centerY + ghostSize);
+	add(drawLegs); 
+	
+	var drawGhost =  new Circle (ghostSize/6);
+	drawGhost.setColor (color);
+	drawGhost.setPosition (centerX - ghostSize/3, centerY + ghostSize);
+	add(drawGhost);
+	
+	var drawGhost =  new Circle (ghostSize/6);
+	drawGhost.setColor (color);
+	drawGhost.setPosition (centerX + ghostSize/3, centerY + ghostSize);
+	add(drawGhost);
+	
+	var drawGhost =  new Circle (ghostSize/6);
+	drawGhost.setColor (Color.white);
+	drawGhost.setPosition (centerX + ghostSize/4.5, centerY);
+	add(drawGhost);
+	
+	var drawGhost =  new Circle (ghostSize/6);
+	drawGhost.setColor (Color.white);
+	drawGhost.setPosition (centerX - ghostSize/5, centerY);
+	add(drawGhost);
+	
+	var drawGhost =  new Circle (ghostSize/13);
+	drawGhost.setColor (Color.blue);
+	drawGhost.setPosition (centerX - ghostSize/10, centerY);
+	add(drawGhost);
+	
+	var drawGhost =  new Circle (ghostSize/13);
+	drawGhost.setColor (Color.blue);
+	drawGhost.setPosition (centerX + ghostSize/3.2, centerY);
+	add(drawGhost);
+	
+	
+}
+
+function pacMan (radius, start, end, unit){
+	var myArc = new Arc(20, start, end, unit);
+    myArc.setPosition(140,170 );
+    myArc.setColor(Color.yellow);
+    add(myArc);
+}
+
+
+function eye(centerX, centerY, color){
+    var cirlceSize = 4;
+    
+    var eye = new Circle(cirlceSize);
+	eye.setColor(color);
+	eye.setPosition(137.5, 160);
+	add(eye); 
+}
+
+function circles(centerX, centerY, color){
+    var circleSize = 4;
+
+//balls
+    var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(18,15);
+	add(ball1); 
+
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(18,30);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(18,45);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(18,60);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(18,75);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(18,90);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(18,105);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(18,120);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(18,135);
+	add(ball1);
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(18,150);
+	add(ball1); 
+
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(18,165);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(18,180);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(18,195);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(18,210);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(18,225);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(18,240);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(18,255);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(18,270);
+	add(ball1);
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(18,285);
+	add(ball1); 
+
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(18,300);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(18,315);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(18,330);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(18,345);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(18,360);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(18,375);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(18,390);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(18,405);
+	add(ball1);
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(18,420);
+	add(ball1); 
+
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(18,435);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(18,450);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(18,465);
+	add(ball1); 
+	
+//balls 2	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(383,15);
+	add(ball1); 
+
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(383, 30);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(383,45);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(383,60);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(383,75);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(383,90);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(383,105);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(383,120);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(383,135);
+	add(ball1);
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(383,150);
+	add(ball1); 
+
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(383,165);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(383,180);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(383,195);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(383,210);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(383,225);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(383,240);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(383,255);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(383,270);
+	add(ball1);
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(383,285);
+	add(ball1); 
+
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(383,300);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(383,315);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(383,330);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(383,345);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(383,360);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(383,375);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(383,390);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(383,405);
+	add(ball1);
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(383,420);
+	add(ball1); 
+
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(383,435);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(383,450);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(383,465);
+	add(ball1);
+	
+//balls 3
+    var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(88,15);
+	add(ball1); 
+
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(88,30);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(88,45);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(88,60);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(88,75);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(88,90);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(88,105);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(88,120);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(88,135);
+	add(ball1);
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(88,150);
+	add(ball1); 
+
+	var ball1 = new Circle(circleSize*2);
+	ball1.setColor(color);
+	ball1.setPosition(88,171);
+	add(ball1); 
+//parte de arriba^^	
+	
+	
+	var ball1 = new Circle(circleSize*2);
+	ball1.setColor(color);
+	ball1.setPosition(88,235);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(88,255);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(88,270);
+	add(ball1);
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(88,285);
+	add(ball1); 
+
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(88,300);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(88,315);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(88,330);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(88,345);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(88,360);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(88,375);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(88,390);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(88,405);
+	add(ball1);
+	
+	var ball1 = new Circle(circleSize*2);
+	ball1.setColor(color);
+	ball1.setPosition(88,425);
+	add(ball1); 
+
+
+	
+//balls 4
+    var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(318,15);
+	add(ball1); 
+
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(318,30);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(318,45);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(318,60);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(318,75);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(318,90);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(318,105);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(318,120);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(318,135);
+	add(ball1);
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(318,150);
+	add(ball1); 
+
+	var ball1 = new Circle(circleSize*2);
+	ball1.setColor(color);
+	ball1.setPosition(318,171);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize*2);
+	ball1.setColor(color);
+	ball1.setPosition(318,235);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(318,255);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(318,270);
+	add(ball1);
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(318,285);
+	add(ball1); 
+
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(318,300);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(318,315);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(318,330);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(318,345);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(318,360);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(318,375);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(318,390);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(318,405);
+	add(ball1);
+	
+	var ball1 = new Circle(circleSize*2);
+	ball1.setColor(color);
+	ball1.setPosition(318,425);
+	add(ball1); 
+	
+//balls5
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(103,90);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(118,90);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(133,90);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(148,90);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(163,90);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(178,90);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize*2);
+	ball1.setColor(color);
+	ball1.setPosition(195,90);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(212,90);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(227,90);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(242,90);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(257,90);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(272,90);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(287,90);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(302,90);
+	add(ball1); 
+	
+//balls6
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(103,300);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(118,300);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(133,300);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(148,300);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(163,300);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(178,300);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize*2);
+	ball1.setColor(color);
+	ball1.setPosition(195,300);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(212,300);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(227,300);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(242,300);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(257,300);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(272,300);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(287,300);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(302,300);
+	add(ball1); 
+	
+//balls7
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(108,425);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(123,425);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(138,425);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(153,425);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(168,425);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(183,425);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(198,425);
+	add(ball1);
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(212,425);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(227,425);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(242,425);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(257,425);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(272,425);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(287,425);
+	add(ball1); 
+	
+	var ball1 = new Circle(circleSize);
+	ball1.setColor(color);
+	ball1.setPosition(302,425);
+	add(ball1);
+	
+}
+
+
+    if (typeof start === 'function') {
+        start();
+    }
+};
+</script>
+
+</body>
+</html>

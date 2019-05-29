@@ -1,0 +1,264 @@
+
+<html>
+<head>
+<title>4. Gold Medal for Design</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://static.codehs.com/gulp/a818e45667427600634e9e44b17902f1a5d48243/chs-js-lib/chs.js"></script>
+
+
+<style>
+canvas {
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+}
+
+pre {
+    border: 1px solid black;
+    display: inline-block;
+    width: 400px;
+    height: 500px;
+    background-color: #F5F5F5;
+}
+</style>
+
+</head>
+
+<body>
+<h1>4. Gold Medal for Design</h1>
+
+
+
+<canvas
+width="400"
+height="500"
+class="codehs-editor-canvas"></canvas>
+<pre id="console"></pre>
+
+<script>
+window.onload = function() {
+
+    function start () {
+
+//Bronze Medal//
+    var rect3 = new Rectangle (20,160);
+    rect3.setColor (Color.yellow);
+	rect3.setPosition (320, 0);
+	add(rect3); 
+	
+	var rect4 = new Rectangle (20,160);
+    rect4.setColor (Color.yellow);
+	rect4.setPosition (260, 0);
+	add(rect4); 
+    
+	var circle02 =  new Circle (70);
+	circle02.setColor (Color.black);
+	circle02.setPosition (300, 120);
+	add(circle02); 
+
+	var circle6 =  new Circle (15);
+	circle6.setColor (Color.blue);
+	circle6.setPosition (273, 110);
+	add(circle6); 
+	
+    var circle65 =  new Circle (10);
+	circle65.setColor (Color.black);
+	circle65.setPosition (273, 110);
+	add(circle65); 
+	
+	var circle7 =  new Circle (15);
+	circle7.setColor (Color.white);
+	circle7.setPosition (300, 110);
+	add(circle7); 
+	
+	var circle75 =  new Circle (10);
+	circle75.setColor (Color.black);
+	circle75.setPosition (300, 110);
+	add(circle75); 
+	
+	var circle8 =  new Circle (15);
+	circle8.setColor (Color.red);
+	circle8.setPosition (327, 110);
+	add(circle8); 
+	
+	var circle85 =  new Circle (10);
+	circle85.setColor (Color.black);
+	circle85.setPosition (327, 110);
+	add(circle85); 
+	
+	var circle9 =  new Circle (15);
+	circle9.setColor (Color.yellow);
+	circle9.setPosition (287, 135);
+	add(circle9); 
+	
+	var circle95 =  new Circle (10);
+	circle95.setColor (Color.black);
+	circle95.setPosition (287, 135);
+	add(circle95); 
+	
+	var circle10 =  new Circle (15);
+	circle10.setColor (Color.green);
+	circle10.setPosition (313, 135);
+	add(circle10); 
+	
+	var circle105 =  new Circle (10);
+	circle105.setColor (Color.black);
+	circle105.setPosition (313, 135);
+	add(circle105); 
+
+//Silver Medal//
+    var rect3 = new Rectangle (20,160);
+    rect3.setColor (Color.yellow);
+	rect3.setPosition (120, 0);
+	add(rect3); 
+	
+	var rect4 = new Rectangle (20,160);
+    rect4.setColor (Color.yellow);
+	rect4.setPosition (60, 0);
+	add(rect4); 
+    
+	var circle03 =  new Circle (70);
+	circle03.setColor (Color.gray);
+	var centerX = getWidth() / 4;
+	var centerY = getHeight() / 4;
+	circle03.setPosition (centerX, centerY);
+	add(circle03); 
+
+	var circle11 =  new Circle (15);
+	circle11.setColor (Color.blue);
+	circle11.setPosition (73, 110);
+	add(circle11); 
+	
+    var circle115 =  new Circle (10);
+	circle115.setColor (Color.gray);
+	circle115.setPosition (73, 110);
+	add(circle115); 
+	
+	var circle12 =  new Circle (15);
+	circle12.setColor (Color.black);
+	circle12.setPosition (100, 110);
+	add(circle12); 
+	
+	var circle125 =  new Circle (10);
+	circle125.setColor (Color.gray);
+	circle125.setPosition (100, 110);
+	add(circle125); 
+	
+	var circle13 =  new Circle (15);
+	circle13.setColor (Color.red);
+	circle13.setPosition (127, 110);
+	add(circle13); 
+	
+	var circle135 =  new Circle (10);
+	circle135.setColor (Color.grey);
+	circle135.setPosition (127, 110);
+	add(circle135); 
+	
+	var circle14 =  new Circle (15);
+	circle14.setColor (Color.yellow);
+	circle14.setPosition (87, 135);
+	add(circle14); 
+	
+	var circle145 =  new Circle (10);
+	circle145.setColor (Color.grey);
+	circle145.setPosition (87, 135);
+	add(circle145); 
+	
+	var circle15 =  new Circle (15);
+	circle15.setColor (Color.green);
+	circle15.setPosition (113, 135);
+	add(circle15); 
+	
+	var circle155 =  new Circle (10);
+	circle155.setColor (Color.gray);
+	circle155.setPosition (113, 135);
+	add(circle155); 
+
+
+    
+//Golden Medal//
+    var rect1 = new Rectangle (20,180);
+    rect1.setColor (Color.yellow);
+	rect1.setPosition (160, 0);
+	add(rect1); 
+	
+	var rect2 = new Rectangle (20,180);
+    rect2.setColor (Color.yellow);
+	rect2.setPosition (220, 0);
+	add(rect2); 
+
+	var text = new Text ("Olympic Medals");
+	text.setPosition(100, 380);
+	text.setColor (Color.purple);
+	add(text);
+    
+	var circle0 =  new Circle (70);
+	circle0.setColor (Color.orange);
+	var centerX = getWidth() / 2;
+	var centerY = getHeight() / 2;
+	circle0.setPosition (centerX, centerY-10);
+	add(circle0); 
+
+	var circle1 =  new Circle (15);
+	circle1.setColor (Color.blue);
+	circle1.setPosition (173, 235);
+	add(circle1); 
+	
+    var circle15 =  new Circle (10);
+	circle15.setColor (Color.orange);
+	circle15.setPosition (173, 235);
+	add(circle15); 
+	
+	var circle2 =  new Circle (15);
+	circle2.setColor (Color.black);
+	circle2.setPosition (200, 235);
+	add(circle2); 
+	
+	var circle25 =  new Circle (10);
+	circle25.setColor (Color.orange);
+	circle25.setPosition (200, 235);
+	add(circle25); 
+	
+	var circle3 =  new Circle (15);
+	circle3.setColor (Color.red);
+	circle3.setPosition (227, 235);
+	add(circle3); 
+	
+	var circle35 =  new Circle (10);
+	circle35.setColor (Color.orange);
+	circle35.setPosition (227, 235);
+	add(circle35); 
+	
+	var circle4 =  new Circle (15);
+	circle4.setColor (Color.yellow);
+	circle4.setPosition (187, 260);
+	add(circle4); 
+	
+	var circle45 =  new Circle (10);
+	circle45.setColor (Color.orange);
+	circle45.setPosition (187, 260);
+	add(circle45); 
+	
+	var circle5 =  new Circle (15);
+	circle5.setColor (Color.green);
+	circle5.setPosition (213, 260);
+	add(circle5); 
+	
+	var circle55 =  new Circle (10);
+	circle55.setColor (Color.orange);
+	circle55.setPosition (213, 260);
+	add(circle55); 
+
+}
+
+
+    if (typeof start === 'function') {
+        start();
+    }
+};
+</script>
+
+</body>
+</html>
